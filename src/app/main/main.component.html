@@ -1,0 +1,23 @@
+<app-header></app-header>
+  <h1>Find Planets</h1>
+  <form (ngSubmit)="onSubmit(form)" #form="ngForm" novalidate >
+    <input ngModel type="text" name="searchTag" (keyup)="onSubmit(form)">
+    <button type="submit">Submit</button>
+  </form>
+  <h2>Planets List: {{ planetsList.length }}</h2>
+
+  <ul *ngFor="let item of resultsToShow ">
+    <li>{{ item }}</li>
+  </ul>
+  <h2>Pagination:</h2>
+  <ul>
+    <li (click)="changePagination(5)">5</li>
+    <li (click)="changePagination(10)">10</li>
+    <li (click)="changePagination(25)">25</li>
+    <li (click)="changePagination(100)">100</li>
+  </ul>
+  <h2>Pages</h2>
+  <ul *ngFor="let page of pages">
+    <li (click)="changePage(page)">{{ page }}</li>
+  </ul>
+<app-footer></app-footer>

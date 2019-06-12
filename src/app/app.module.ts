@@ -17,13 +17,15 @@ import { PlanetComponent } from './planet/planet.component';
 import { PlanetsDataService } from './services/planets-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { PlanetListComponent } from './planet-list/planet-list.component';
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     HeaderComponent,
     FooterComponent,
-    PlanetComponent
+    PlanetComponent,
+    PlanetListComponent
   ],
   imports: [
     BrowserModule,

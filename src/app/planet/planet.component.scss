@@ -1,0 +1,30 @@
+.planet-data {
+  min-height: 80%;
+  // width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  h1 {
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: rgb(146, 173, 26);
+    span {
+      color: white;
+      margin-right: 25px;
+    }
+  }
+  ul {
+    list-style-type: none;
+    li {
+      color: rgb(146, 173, 26);
+      margin: 10px;
+      padding: 10px;
+      span {
+        font-family: 'Roboto Slab', serif;
+        color: white;
+        margin-right: 25px;
+      }
+    }
+  }
+}

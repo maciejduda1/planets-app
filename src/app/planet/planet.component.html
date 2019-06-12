@@ -1,3 +1,18 @@
-<p>
-  planet works!
-</p>
+<div class="planet-data">
+  <div class="planet-info" *ngIf="planetData; else noPlanet">
+    <h1><span>Planet Name:</span> {{ planetData.name }}</h1>
+    <ul>
+      <li></li>
+      <li><span>Planet Climate:</span>{{ planetData.climate }}</li>
+      <li><span>Planet Diameter:</span>{{ planetData.diameter }}</li>
+      <li><span>Planet Gravity:</span>{{ planetData.gravity }}</li>
+      <li><span>Planet Population:</span>{{ planetData.population }}</li>
+      <li><span>Planet Terrain:</span>{{ planetData.terrain }}</li>
+    </ul>
+  </div>
+  <ng-template #noPlanet>
+    <h2>There is no such planet in Star Wars Universe. </h2>
+    <i>May the Force be with you!</i>
+  </ng-template>
+
+</div>

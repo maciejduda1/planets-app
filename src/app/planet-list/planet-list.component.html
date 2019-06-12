@@ -1,0 +1,30 @@
+<div class="list-container">
+  <div class="filter-section">
+    <h1>Filter Planets:</h1>
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm" novalidate >
+      <input ngModel type="text" name="searchTag" (keyup)="onSubmit(form)" [placeholder]="filter ? filter : ''">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <div class="pagination-section">
+    <h2>Pagination:</h2>
+    <ul class="pagination-list">
+      <li (click)="changePagination(5)" [classList]="pagination === 5 ? 'active' : ''">5</li>
+      <li (click)="changePagination(10)" [classList]="pagination === 10 ? 'active' : ''">10</li>
+      <li (click)="changePagination(25)"[classList]="pagination === 25 ? 'active' : ''">25</li>
+      <li (click)="changePagination(100)" [classList]="pagination === 100 ? 'active' : ''">100</li>
+    </ul>
+  </div>
+  <div class="pages-section">
+    <h2>Pages:</h2>
+    <ul class="page-list" >
+      <li *ngFor="let item of pages" (click)="changePage(item)" [classList]="page === item ? 'active' : ''">{{ item }}</li>
+    </ul>
+  </div>
+  <div class="planets-section">
+    <h2>Planets List: {{ planetsList.length }}</h2>
+    <ul class="planet-list" *ngIf="resultsToShow">
+      <li *ngFor="let planetName of resultsToShow "> <a [routerLink]="['/planets', planetName]" routerLinkActive="router-link-active"  >{{ planetName }}</a> </li>
+    </ul>
+  </div>
+</div>

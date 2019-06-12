@@ -1,0 +1,106 @@
+.list-container {
+  margin-bottom: auto;
+  margin-top: 100px;
+  margin: 0 5%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .planets-section {
+    min-height: 300px;
+    width: 100%;
+    .planet-list {
+      width: 100%;
+      li {
+        border: 1px solid rgba(0, 0, 0, 0.7);
+        margin: 5px;
+        font-family: 'Noto Serif', serif;
+        background: rgba(17, 11, 8, 0.6);
+        &:hover, &:active, &:focus {
+          box-shadow: 0px 0px 0px 1px inset rgb(146, 173, 26),
+            -1px -1px 1px -1px inset rgb(146, 173, 26);
+          color: rgb(146, 173, 26);
+          transition: all 0.3s;
+        }
+        a {
+          margin: 5px;
+          padding: 5px;
+          letter-spacing: 5px;
+          text-decoration: none;
+          font-family: 'Roboto Slab', serif;
+          color: white;
+          &:hover, &:active, &:focus {
+            color: rgb(146, 173, 26);
+            transition: all 0.3s;
+          }
+        }
+      }
+    }
+  }
+  .pages-section, .pagination-section, .filter-section {
+    font-family: 'Roboto Slab', serif;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+    align-items: center;
+    h1, h2 {
+      margin-right: 10px;
+    }
+    input {
+      height: 25px;
+    }
+    button {
+      font-family: 'Roboto Slab', serif;
+      border: 1px solid rgb(146, 173, 26);
+      padding: 5px;
+      margin: 5px;
+      background: #492211;
+      color: white;
+      &:hover, &:active, &:focus {
+        color: rgb(146, 173, 26);
+      }
+    }
+  }
+  .page-list, .pagination-list {
+    li {
+      margin: 1px;
+      text-align: center;
+      font-size: 12px;
+      line-height: 20px;
+      width: 20px;
+      height: 20px;
+      border: 1px solid rgba(0, 0, 0, 0.7);
+      border-radius: 50%;
+      background-color: #492211;
+      &:hover, &:active, &:focus{
+        cursor: pointer;
+        box-shadow: 0px 0px 0px 1px inset rgb(146, 173, 26),
+                    -1px -1px 1px -1px inset rgb(146, 173, 26);
+        color: rgb(146, 173, 26);
+        transition: all 0.3s;
+      }
+    }
+  }
+  .pagination-list {
+    color: white;
+    li {
+      border-radius: 0;
+    }
+  }
+}
+
+.active {
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 1px inset rgb(146, 173, 26),
+              -1px -1px 1px -1px inset rgb(146, 173, 26);
+  color: rgb(146, 173, 26);
+}

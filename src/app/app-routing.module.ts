@@ -1,14 +1,16 @@
+import { PlanetListComponent } from './planet-list/planet-list.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { PlanetComponent } from './planet/planet.component';
 
 const routes: Routes = [
-  { path: '', component: MainComponent, children: [
-    { path: ':planetId', component: PlanetComponent }
+  { path: 'planets', component: MainComponent, children: [
+    { path: ':planetName', component: PlanetComponent },
+    { path: '', component: PlanetListComponent, pathMatch: 'full' }
   ]},
-  { path: '*', redirectTo: ''},
-  { path: '**', redirectTo: ''}
+  { path: '', redirectTo: '/planets', pathMatch: 'full'},
+  { path: '**', redirectTo: '/planets'}
 ];
 
 @NgModule({

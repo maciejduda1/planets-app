@@ -21,14 +21,14 @@ export function appReducers(state = initialState, action: fromMainActions.AppAct
   switch ( action.type ) {
     case ( fromMainActions.GET_ALL_PLANETS_DATA ):
       return {
-        ...state, planetsRequested: true, planetsRecived: false
+        ...state, planetsRequested: true
       };
 
     case ( fromMainActions.GET_ALL_PLANETS_DATA_SUCCESS ):
       let planetsEntities = { ...state.planets };
 
       action.payload.results.map(
-        (planet: Planet) => planetsEntities = { ...planetsEntities, [planet.name]: planet}
+        (planet: Planet) => planetsEntities = { ...planetsEntities, [planet.name.replace(/\s/g, '')]: planet}
       );
 
       return {

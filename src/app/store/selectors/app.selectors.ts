@@ -1,7 +1,6 @@
 import { createSelector } from '@ngrx/store';
 import * as fromFeature from '../reducers';
 import * as fromAppReducer from '../reducers/app.reducer';
-// import * as fromRoot from '../../../store';
 
 export const getStoreState = createSelector(
   fromFeature.selectFeature,
@@ -11,6 +10,11 @@ export const getStoreState = createSelector(
 export const getPlanetsList = createSelector(
   getStoreState,
   fromAppReducer.getPlanetsData
+);
+
+export const getPlanetsGetStatus = createSelector(
+  getStoreState,
+  fromAppReducer.getPlanetsDataRecivedState
 );
 
 export const getFilter = createSelector(
@@ -34,3 +38,8 @@ export const getPlanetNames = createSelector(
   }
 );
 
+export const getSelectedPlanet = createSelector(
+  getPlanetsList,
+  fromFeature.selectUrl,
+  (planets, params ) => planets[params.split('/').pop()]
+);
